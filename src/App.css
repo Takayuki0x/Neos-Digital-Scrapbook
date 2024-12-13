@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: black;
+}
+
+canvas {
+    display:block;
+}
+
+.graphpaperbg {
+    background:
+        linear-gradient(-90deg, #070 1px, transparent 1px),
+        linear-gradient(#070 1px, transparent 1px),
+        black;
+    background-size:
+        60px 60px,
+        60px 60px,
+        80px 80px,
+        80px 80px,
+        80px 80px,
+        80px 80px,
+        80px 80px,
+        80px 80px;
+    background-color: black;
+}
