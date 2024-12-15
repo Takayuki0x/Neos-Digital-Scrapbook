@@ -11,7 +11,18 @@ export default {
       courier: ['Courier', 'monospace'],
       ocraextended: ['OCR A Extended', 'monospace'],
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        flicker: {
+          '0%, 100%': { opacity: 1 },
+          '33%': { opacity: 0.8 },
+          '66%': { opacity: 0.4 },
+        },
+      },
+      animation: {
+        flicker: 'flicker 1s infinite',
+      },
+    },
   },
   plugins: [],
 }

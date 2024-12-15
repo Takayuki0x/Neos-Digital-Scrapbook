@@ -2,12 +2,24 @@ import MatrixRainingCode from "../components/MatrixRainingEffect"
 import { motion } from "motion/react"
 import { Link } from "react-router";
 import { ghostCursor } from "cursor-effects";
+import MusicToggle from "../components/MusicToggle";
 
 export default function MainPage(){
     new ghostCursor();
+
+    const muteaudio = () => {
+        try{
+            let audio = document.getElementsByTagName("audio")[0]
+            audio.remove()
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
-        <div className="min-h-screen cursor-pointer">
+        <div className="min-h-screen cursor-default">
             <MatrixRainingCode className="absolute inset-0" />
+            <MusicToggle />
             <div className="flex items-center justify-center gap-12 overflow-clip">
                 <img src="/danger-rotating.gif" className="w-48 h-48"/>
                 <img src="/danger-rotating.gif" className="w-48 h-48"/>
@@ -22,8 +34,8 @@ export default function MainPage(){
                     <img src="/danger-sign.gif" className="w-24 h-34" />
                 </div>
                 <div className="flex flex-col items-center justify-center mt-24 w-6/12 bg-black border border-green-400">
-                    <h1 className="text-5xl font-bold text-white font-courier">W3LC0M3 T0 TH3 M41NFR4M3</h1>
-                    <p className="text-lg text-white font-ocraextended pt-2">Y0U 4RE TH3 <span className="text-green-400">7689TH</span> V1S1T0R!</p>
+                    <h1 className="text-5xl font-bold text-white font-courier animate-flicker">W3LC0M3 T0 TH3 M41NFR4M3</h1>
+                    <p className="text-lg text-white font-ocraextended pt-2 animate-flicker">Y0U 4RE TH3 <span className="text-green-400">7689TH</span> V1S1T0R!</p>
                 </div>
                 <div className="w-3/12 flex flex-col items-center justify-center mt-20">
                     <img src="/danger-sign.gif" className="w-24 h-34" />
@@ -54,7 +66,7 @@ export default function MainPage(){
                             } />
                         </div>
                         <p className="px-4 pt-2 mb-4 text-green-600 font-ocraextended">Dive into 90s hacking culture, movies like Hackers and The Matrix, and famous events like Y2K.</p>
-                        <Link to="" className="text-green-300 ml-4 underline font-ocraextended">Visit...</Link>
+                        <Link to="/digitalshadows" className="text-green-300 ml-4 underline font-ocraextended" onClick={muteaudio}>Visit...</Link>
                     </div>
                     <div className="border border-green-500 bg-black h-40 mt-2">
                         <div className="flex">
@@ -70,7 +82,7 @@ export default function MainPage(){
                             } />
                         </div>
                         <p className="px-4 pt-2 mb-6 text-green-600 font-ocraextended">Explore how tech was portrayed in 90s TV shows, video games, and movies.</p>
-                        <Link to="" className="text-green-300 ml-4 underline font-ocraextended">Visit...</Link>
+                        <Link to="/popcyber" className="text-green-300 ml-4 underline font-ocraextended" onClick={muteaudio}>Visit...</Link>
                     </div>
                     <div className="border border-green-500 bg-black h-40 mt-2">
                         <div className="flex">
@@ -86,23 +98,7 @@ export default function MainPage(){
                             } />
                         </div>
                         <p className="px-4 pt-2 mb-6 text-green-600 font-ocraextended">Explore how trackers and software cracking affected music.</p>
-                        <Link to="" className="text-green-300 ml-4 underline font-ocraextended">Visit...</Link>
-                    </div>
-                    <div className="border border-green-500 bg-black h-40 mt-2">
-                        <div className="flex">
-                            <p className="text-green-400 font-bold pl-4 py-2 font-courier">&gt; N30&apos;S 4RCH1V3</p>
-                            <motion.div className="w-0.5 h-4 ml-4 my-auto bg-green-400" animate={
-                                {
-                                    rotate: [0, 90, 180, 270, 360],
-                                    transition: {
-                                        duration: 1,
-                                        repeat: Infinity
-                                    }
-                                }
-                            } />
-                        </div>
-                        <p className="px-4 pt-2 mb-2 text-green-600 font-ocraextended">A collection of personal memories tied to 90s tech—first computer, favorite games, or internet moments.</p>
-                        <Link to="" className="text-green-300 ml-4 underline font-ocraextended">Visit...</Link>
+                        <Link to="/blastingbeats" className="text-green-300 ml-4 underline font-ocraextended" onClick={muteaudio}>Visit...</Link>
                     </div>
                 </div>
                 <div className="pt-8 w-9/12">
