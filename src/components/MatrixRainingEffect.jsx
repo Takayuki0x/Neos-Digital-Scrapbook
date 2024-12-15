@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 
 
-const MatrixRainingCode = () => {
+// eslint-disable-next-line react/prop-types
+const MatrixRainingCode = ({color = "green"}) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -28,6 +29,7 @@ const MatrixRainingCode = () => {
       ctx.fillRect(0, 0, width, height);
 
       ctx.fillStyle = "#0f0"; // Green color for characters
+      color === "green" ? ctx.fillStyle = "#0f0" : ctx.fillStyle = "#f00"; // Red color for characters
 
       // Draw the characters
       ctx.font = "15px monospace";
@@ -81,7 +83,7 @@ const MatrixRainingCode = () => {
         window.removeEventListener("resize", handleResize);
       }
     };
-  }, []);
+  }, [color]);
 
   return <canvas className="matrix-canvas fixed top-0 left-0 z-[-1]" ref={canvasRef}></canvas>;
 };

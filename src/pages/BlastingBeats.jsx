@@ -2,6 +2,7 @@ import { ghostCursor } from "cursor-effects";
 import MatrixRainingCode from "../components/MatrixRainingEffect";
 import MusicToggle from "../components/MusicToggle";
 import { useNavigate } from "react-router-dom";
+import GifStrip from "../components/GifStrip";
 
 export default function BlastBeats() {
     const navigate = useNavigate();
@@ -93,18 +94,7 @@ export default function BlastBeats() {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center mt-14">
-                <div className="flex overflow-clip">
-                    <img src="/hack.gif" />
-                    <img src="/Neopage.gif" />
-                    <img src="/Atomic.gif" />
-                    <img src="/click.gif" />
-                    <img src="/HACKCLUB.gif" />
-                    <img src="/laser.gif" />
-                    <img src="/counter4.gif" />
-                    <img src="/counter4.gif" />
-                </div>
-            </div>
+            <GifStrip classes="mt-8" />
         </div>
     )
 }
